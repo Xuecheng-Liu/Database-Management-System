@@ -1,0 +1,257 @@
+/*USER*/
+Insert into USER(email,addrstreet,addrcity,addrzip,addrcountry,fname,lname) VALUES ('OliviaRPolly@jourapide.com','4610 Norma Av', 'Dayton',45402,'United States','Olivia','Polly');
+Insert into USER(email,addrstreet,addrcity,addrzip,addrcountry,fname,lname) VALUES ('DouglasSLong@armyspy.com','2637 Chatham Way', 'Temple Hills',20031,'United States','Douglas','Long');
+Insert into USER(email,addrstreet,addrcity,addrzip,addrcountry,fname,lname) VALUES ('KellyAMcClendon@rhyta.com','1588 Lynn Avenue', 'Wausau',54401,'United States','Kelly','McClendon');
+Insert into USER(email,addrstreet,addrcity,addrzip,addrcountry,fname,lname) VALUES ('EvonneDCruz@jourrapide.com','2691 Geneva Street', 'New York',10019,'United States','Evonne','Cruz');
+Insert into USER(email,addrstreet,addrcity,addrzip,addrcountry,fname,lname) VALUES ('TravisCAbraham@armyspy.com','257 George Avenue', 'Mobile',36638,'United States','Travis','Abraham');
+Insert into USER(email,addrstreet,addrcity,addrzip,addrcountry,fname,lname) VALUES ('WilliamERomo@rhyta.com','1139 Horizon Circle', 'Tacoma',98499,'United States','William','Romo');
+
+/*STORE*/
+Insert into STORE(user_id,name,description,banner_image) values (4,'Liberty Music','The perfect place to pick up custom lo-fi and relaxing music','https://picsum.photos/200/300');
+UPDATE USER
+SET
+	storeownerflag = 1,
+    	seller_bio="Artist and author of fine music you've never heard of"
+Where
+	user_id=4;
+
+Insert into STORE(user_id,name,description,banner_image) values (6,'Mainline Research',"Portal for access to Dr Evonne Cruz's Personal Research Library",'https://picsum.photos/200/300');
+UPDATE USER
+SET
+	storeownerflag = 1,
+    	seller_bio="Evonne Cruz, PhD in general academia. If you can think of a topic, she has written a thesis on it"
+Where
+	user_id=6;
+Insert into STORE(user_id,name,description,banner_image) values (2,'Connector Design',"Need help with your startup? With my help, you'll be rolling in clicks and retention",'https://picsum.photos/200/300');
+UPDATE USER
+set
+	storeownerflag = 1,
+    	seller_bio="Experienced Graphic Designer and Web Personality Bill Romo, at your service"
+Where
+	user_id=2;
+
+Insert into STORE(user_id,name,description,banner_image) values (3,'General Store',"Everything you ever need.",'https://picsum.photos/200/300');
+UPDATE USER
+set
+	storeownerflag = 1,
+    	seller_bio="Jack of all Trades"
+Where
+	user_id=2;
+
+
+/*ITEM*/
+Insert into item(title,description,store_id) values ('Custom Backing Track','Provide Any Specifications, and Ill make you a brand new track from scratch',1);
+Insert into item(title,description,store_id) values ('30 min Lofi Song','Includes unlimited rights for personal usage (Commercial use restricted under copyright)',1);
+Insert into item(title,description,store_id) values ('Sample Backing Track','Includes allowance for commercial use',1);
+
+Insert into item(title,description,file,store_id) values ('On the Ethics of Level 5 Artificial Intelligence','See Abstract',"On the Ethics of Level 5 Artificial Intelligence.pdf",2);
+Insert into item(title,description,file,store_id) values ('Impact of SQLite on Coder Sanity', 'See Abstract',"Impact of SQLite on Coder Sanity.pdf",2);
+Insert into item(title,description,file,store_id) values ("Lingering Effects of Quarantine on the Cicada Hibernation Cycle","See Abstract","Lingering Effects of Quarantine on the Cicada Hibernation Cycle.pdf",2);
+
+Insert into item(title,description,file,store_id) values ('Webpage Design Tool','Easy-to-use UI allows for anybody to create webpages like a pro!',"EZWeb.exe",3);
+Insert into item(title,description,store_id) values ('One on One Consulting Session','I will personally advise and work with you, on your own time, to figure out the best steps for your online business',3);
+Insert into item(title,description,file,store_id) values ('Basic Webpage Template','Provides access to my world-renowned web template for commercial use','template.pdf',3);
+
+/*Prices*/
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(1,0.0015,150,1500); 
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(2,0.0001,9,100);
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(3,0.0012,120,1200); 
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(4,0.0003,30,300); 
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(5,0.0025,25,250); 
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(6,0.0004,40,400); 
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(7,0.00145,145,1450); 
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(8,0.0045,450,4500);
+insert into PRICE(item_id,crypto_price,usd_price,karma_price) VALUES(9,0.00035,35,350); 
+
+/*Keywords*/
+insert into KEYWORDS (item_id,keyword) VALUES (1,'custom');
+insert into KEYWORDS (item_id,keyword) VALUES (1,'music');
+insert into KEYWORDS (item_id,keyword) VALUES (1,'art');
+insert into KEYWORDS (item_id,keyword) VALUES (2,'music');
+insert into KEYWORDS (item_id,keyword) VALUES (2,'art');
+insert into KEYWORDS (item_id,keyword) VALUES (3,'license');
+insert into KEYWORDS (item_id,keyword) VALUES (3,'music');
+insert into KEYWORDS (item_id,keyword) VALUES (3,'art');
+
+insert into KEYWORDS (item_id,keyword) VALUES (4,'research');
+insert into KEYWORDS (item_id,keyword) VALUES (4,'article');
+insert into KEYWORDS (item_id,keyword) VALUES (4,'journal');
+insert into KEYWORDS (item_id,keyword) VALUES (4,'tech');
+insert into KEYWORDS (item_id,keyword) VALUES (4,'artificial intelligence');
+insert into KEYWORDS (item_id,keyword) VALUES (5,'research');
+insert into KEYWORDS (item_id,keyword) VALUES (5,'article');
+insert into KEYWORDS (item_id,keyword) VALUES (5,'journal');
+insert into KEYWORDS (item_id,keyword) VALUES (5,'tech');
+insert into KEYWORDS (item_id,keyword) VALUES (5,'databases');
+insert into KEYWORDS (item_id,keyword) VALUES (5,'coding');
+insert into KEYWORDS (item_id,keyword) VALUES (6,'research');
+insert into KEYWORDS (item_id,keyword) VALUES (6,'article');
+insert into KEYWORDS (item_id,keyword) VALUES (6,'journal');
+insert into KEYWORDS (item_id,keyword) VALUES (6,'pandemic');
+insert into KEYWORDS (item_id,keyword) VALUES (6,'nature');
+insert into KEYWORDS (item_id,keyword) VALUES (6,'insects');
+
+insert into KEYWORDS (item_id,keyword) VALUES (7,'tech');
+insert into KEYWORDS (item_id,keyword) VALUES (7,'web');
+insert into KEYWORDS (item_id,keyword) VALUES (7,'startup');
+insert into KEYWORDS (item_id,keyword) VALUES (7,'program');
+insert into KEYWORDS (item_id,keyword) VALUES (8,'tech');
+insert into KEYWORDS (item_id,keyword) VALUES (8,'web');
+insert into KEYWORDS (item_id,keyword) VALUES (8,'startup');
+insert into KEYWORDS (item_id,keyword) VALUES (8,'custom');
+insert into KEYWORDS (item_id,keyword) VALUES (8,'advising');
+insert into KEYWORDS (item_id,keyword) VALUES (8,'professional');
+insert into KEYWORDS (item_id,keyword) VALUES (9,'tech');
+insert into KEYWORDS (item_id,keyword) VALUES (9,'web');
+insert into KEYWORDS (item_id,keyword) VALUES (9,'startup');
+insert into KEYWORDS (item_id,keyword) VALUES (9,'license');
+
+
+
+
+
+/*Carts*/
+insert into SHOPPING_CART (user_id) values (1);
+insert into SHOPPING_CART (user_id) values (2);
+insert into SHOPPING_CART (user_id) values (3);
+insert into SHOPPING_CART (user_id) values (4);
+insert into SHOPPING_CART (user_id) values (5);
+insert into SHOPPING_CART (user_id) values (6);
+
+/*Contains*/
+insert into contains (cart_id,item_id,quantity) values (1,2,1);
+insert into contains (cart_id,item_id,quantity) values (1,3,2);
+insert into contains (cart_id,item_id,quantity) values (1,7,3);
+insert into contains (cart_id,item_id,quantity) values (1,4,1);
+
+insert into contains (cart_id,item_id,quantity) values (2,1,2);
+insert into contains (cart_id,item_id,quantity) values (2,5,1);
+insert into contains (cart_id,item_id,quantity) values (2,6,1);
+
+insert into contains (cart_id,item_id,quantity) values (3,7,1);
+insert into contains (cart_id,item_id,quantity) values (3,8,1);
+insert into contains (cart_id,item_id,quantity) values (3,2,1);
+
+insert into contains (cart_id,item_id,quantity) values (4,7,1);
+insert into contains (cart_id,item_id,quantity) values (4,8,2);
+insert into contains (cart_id,item_id,quantity) values (4,5,1);
+
+insert into contains (cart_id,item_id,quantity) values (5,2,1);
+insert into contains (cart_id,item_id,quantity) values (5,6,1);
+insert into contains (cart_id,item_id,quantity) values (5,8,2);
+
+insert into contains (cart_id,item_id,quantity) values (6,1,2);
+insert into contains (cart_id,item_id,quantity) values (6,2,1);
+insert into contains (cart_id,item_id,quantity) values (6,3,2);
+
+/*Promo Codes*/
+insert into PROMO_CODE (code,store_id,discount,start_time,end_time) values ('LiberateYourMusic',1,0.2,2021-02-12,2021-03-01);
+insert into PROMO_CODE (code,store_id,discount,start_time,end_time) values ('FreedomJams',1,0.25,2021-03-15,2021-03-18);
+insert into PROMO_CODE (code,store_id,discount,start_time,end_time) values ('LibraryCard',2,0.35,2021-03-01,2021-03-31);
+insert into PROMO_CODE (code,store_id,discount,start_time,end_time) values ('QuarantineReads',2,0.4,2020-04-05,2020-06-30);
+insert into PROMO_CODE (code,store_id,discount,start_time,end_time) values ('LetsGetStarted',3,0.10,2021-01-01,2021-01-14);
+insert into PROMO_CODE (code,store_id,discount,start_time,end_time) values ('XMasDeals',3,0.4,2020-12-24,2020-12-26);
+
+/*Favorites*/
+insert into FAVORITES (user_id,store_id) values (1,3);
+insert into FAVORITES (user_id,store_id) values (1,2);
+insert into FAVORITES (user_id,store_id) values (2,1);
+insert into FAVORITES (user_id,store_id) values (3,3);
+insert into FAVORITES (user_id,store_id) values (4,2);
+insert into FAVORITES (user_id,store_id) values (5,1);
+insert into FAVORITES (user_id,store_id) values (6,2);
+
+/*Order_Table*/
+insert into ORDER_TABLE (cart_id,purchase_date) values (1,2020-06-14);
+insert into ORDER_TABLE (cart_id,purchase_date) values (3,2020-08-22);
+insert into ORDER_TABLE (cart_id,purchase_date) values (5,2021-01-11);
+insert into ORDER_TABLE (cart_id,purchase_date) values (6,2021-09-30);
+insert into ORDER_TABLE (cart_id,purchase_date) values (2,2019-04-01);
+insert into ORDER_TABLE (cart_id,purchase_date) values (4,2018-08-04);
+
+/*Order_Payment*/
+insert into PAYMENT_TYPE (type, user_id) values ('credit_card', 1);
+insert into CREDIT_CARD	(payment_id,card_no,billaddrstreet,billaddrcity,billaddrzip,billaddrcountry) values (1,8314763458705423,'4610 Norma Av','Dayton',45402,'United States');
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (1,1,1,250);
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (1,3,1,145);
+
+insert into PAYMENT_TYPE (type, user_id) values ('cryptocurrency', 2);
+insert into CRYPTOCURRENCY(payment_id,wallet_id,type) values (2,2312431,'dogecoin');
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (2,1,5,.003);
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (2,2,5,.00065);
+
+insert into PAYMENT_TYPE (type, user_id) values ('bank_account', 2);
+insert into BANK_ACCOUNT(payment_id,account_no,routing_no) values (3,232154543,3421410289);
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (3,3,2,695);
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (3,1,2,9);
+
+insert into PAYMENT_TYPE (type, user_id) values ('cryptocurrency', 4);
+insert into CRYPTOCURRENCY(payment_id,wallet_id,type) values (4,25432161,'etherium');
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (4,3,6,.00695);
+insert into ORDER_PAYMENT (payment_id,store_id,order_id,amount_paid) values (4,2,6,.00025);
+
+insert into PAYMENT_TYPE (type, user_id) Values ('karma', 5);
+insert into KARMA_POINTS (payment_id) values (5);
+insert into ORDER_PAYMENT(payment_id,store_id,order_id,amount_paid) values (5,2,3,400);
+
+insert into PAYMENT_TYPE (type, user_id) Values ('bank_account', 2);
+insert into BANK_ACCOUNT(payment_id,account_no,routing_no) values (6,742456641233,78267431);
+insert into ORDER_PAYMENT(payment_id,store_id,order_id,amount_paid) values (6,3,3,450);
+
+insert into PAYMENT_TYPE (type, user_id) values ('credit_card', 5);
+insert into CREDIT_CARD	(payment_id,card_no,billaddrstreet,billaddrcity,billaddrzip,billaddrcountry) values (7,4916424510804211,'257 George Avenue', 'Mobile',36638,'United States');
+insert into ORDER_PAYMENT(payment_id,store_id,order_id,amount_paid) values (7,1,3,20);
+
+insert into PAYMENT_TYPE (type, user_id) values ('karma', 6);
+insert into KARMA_POINTS (payment_id) values (12);
+insert into ORDER_PAYMENT(payment_id,store_id,order_id,amount_paid) values (8,1,4,5210);
+
+
+/*Image_Portfolio*/
+insert into IMAGE_PORTFOLIO (item_id, picture_1,picture_2,picture_3,picture_4,picture_5) values (1,'https://picsum.photos/200/300','https://picsum.photos/40/500','https://picsum.photos/200','https://picsum.photos/300','https://picsum.photos/450');
+insert into IMAGE_PORTFOLIO (item_id, picture_1,picture_2,picture_3) values (3,'https://picsum.photos/200','https://picsum.photos/300','https://picsum.photos/450');
+insert into IMAGE_PORTFOLIO (item_id, picture_1,picture_2,picture_3,picture_4) values (5,'https://picsum.photos/40/500','https://picsum.photos/200','https://picsum.photos/300','https://picsum.photos/450');
+insert into IMAGE_PORTFOLIO (item_id, picture_1) values (7,'https://picsum.photos/450');
+insert into IMAGE_PORTFOLIO (item_id, picture_1,picture_2) values (8,'https://picsum.photos/200/300','https://picsum.photos/40/500');
+
+
+/*ACCEPTED_PAYMENT*/
+insert into ACCEPTED_PAYMENT (store_id,payment_type) values (1,'karma');
+insert into ACCEPTED_PAYMENT (store_id,payment_type) values (1,'credit_card');
+insert into ACCEPTED_PAYMENT (store_id,payment_type) values (1,'bank_account');
+
+insert into ACCEPTED_PAYMENT (store_id,payment_type) values (2,'karma');
+insert into ACCEPTED_PAYMENT (store_id,payment_type) values (2,'cryptocurrency');
+
+insert into ACCEPTED_PAYMENT (store_id,payment_type) values (3,'credit_card');
+insert into ACCEPTED_PAYMENT (store_id,payment_type) values (3,'bank_account');
+
+/*Item Review*/
+insert into ITEM_REVIEW (user_id,item_id,content) values (2,1,'Decent result for the cost, and fast turnaround.');
+insert into ITEM_REVIEW (user_id,item_id,content) values (5,3,'Would recommend!');
+insert into ITEM_REVIEW (user_id,item_id,content) values (3,4,'A very interesting take on the subject');
+insert into ITEM_REVIEW (user_id,item_id,content) values (4,7,'UI hard to get the hang of');
+insert into ITEM_REVIEW (user_id,item_id,content) values (5,8,'Took a long time to schedule a meeting');
+insert into ITEM_REVIEW (user_id,item_id,content) values (5,2,'Very nice song to listen to while studying');
+
+
+/*Social Media*/
+insert into SOCIAL_MEDIA (store_id,link) values (1,"twitter.com/LibertyMusic");
+
+insert into SOCIAL_MEDIA (store_id,link) values (2,"linkedin.com/MainLineResearch");
+
+insert into SOCIAL_MEDIA (store_id,link) values (3,"hipsocial.com/ConnectorDesign");
+
+/*Store Reviews*/
+insert into STORE_REVIEW (user_id,store_id,stars,content,o_karma_earned) values (2,1,5,'Owner Helpful and Friendly. Great Music Too!',500);
+insert into STORE_REVIEW (user_id,store_id,stars,content,o_karma_earned) values (5,1,1,'The owner took forever to respond to my requests.',100);
+
+insert into STORE_REVIEW (user_id,store_id,stars,content,o_karma_earned) values (3,2,5,'The author really knows her stuff!',500);
+insert into STORE_REVIEW (user_id,store_id,stars,content,o_karma_earned) values (1,2,4,'Research selection is good, but not as much as advertised',400);
+
+insert into STORE_REVIEW (user_id,store_id,stars,content,o_karma_earned) values (3,3,5,'Owner is very charismatic and gives great advice.',500);
+insert into STORE_REVIEW (user_id,store_id,stars,content,o_karma_earned) values (4,3,3,'Decent services provided, but the owner is a bit much.',300);
+
+
+
+

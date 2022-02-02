@@ -1,0 +1,29 @@
+/* views */
+/* you may have to paste these separately as sqlite doesn't like multiple view create commands */
+CREATE VIEW User_Carts AS
+SELECT cart_id,item_id,quantity,user_id
+    FROM SHOPPING_CART NATURAL JOIN CONTAINS;
+    ORDER by cart_id asc;
+
+CREATE VIEW ITEMS_SOLD AS
+	SELECT Title, purchased FROM 
+    	(SELECT item_id,sum(quantity) as purchased FROM 
+			(SELECT DISTINCT item_id FROM ITEM WHERE store_id = 2)
+    		NATURAL JOIN
+    		(SELECT item_id,quantity FROM (ORDER_TABLE NATURAL JOIN SHOPPING_CART) NATURAL JOIN CONTAINS)
+			GROUP BY item_id)
+         NATURAL JOIN item;
+
+
+/* indices */
+CREATE INDEX IX_ITEM_Store ON ITEM(Store_ID);
+CREATE INDEX IX_CONTAINS_Cart_Item ON CONTAINS(Cart_ID, Item_ID);
+
+/* update */
+UPDATE USER SET seller_bio = 'starting a new store' WHERE user_id = 3;
+
+/* delete */
+DELETE FROM PROMO_CODE WHERE store_id = 1;
+DELETE FROM FAVORITES WHERE user_id = 1;
+DELETE FROM ACCEPTED_PAYMENT WHERE ACCEPTED_PAYMENT.Payment_Type = 'credit card' AND ACCEPTED_PAYMENT.store_id = 1;
+
